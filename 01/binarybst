@@ -6,6 +6,10 @@ public class BinaryTreeFlipping{
   void dfs(TreeNode cur){
     if(cur.left!=null){
       dfs(cur.left);
+      cur.left.right=cur;
+      cur.left.left=cur.right;
+      cur.left=null;
+      cur.right=null;
     }
     else{
       newRoot=cur;
