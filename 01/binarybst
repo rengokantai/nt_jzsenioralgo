@@ -26,3 +26,25 @@ public class BinaryTreeFlipping{
 }
 
 ```
+
+lc366 	
+Find Leaves of Binary Tree  
+```
+public class Solution {
+  HashMap<Integer,List<Integer>> depth = new HashMap<>();
+  int max_depth;
+  
+  int dfs(TreeNode cur){
+    if(cur==null){
+      return 0;
+    }
+    int d = Math.max(dfs(cur.left),dfs(cur.right))+1;
+    max_depth = Math.max(max_depth,d);
+    if(!depth.containsKey(d)){
+      depth.put(d, new ArrayList<Integer>());
+    }
+    depth.get(d).add(cur.val);
+    return d;
+  }
+}
+```
