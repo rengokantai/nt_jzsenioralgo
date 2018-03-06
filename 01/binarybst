@@ -1,0 +1,24 @@
+Binary Tree Flipping
+```
+public class BinaryTreeFlipping{
+  TreeNode newRoot;
+  
+  void dfs(TreeNode cur){
+    if(cur.left!=null){
+      dfs(cur.left);
+    }
+    else{
+      newRoot=cur;
+    }
+  }
+  
+  public TreeNode upsideDownBinaryTree(TreeNode root){
+    if(root==null){
+      return null;
+    }
+    dfs(root);
+    return newRoot;
+  }
+}
+
+```
