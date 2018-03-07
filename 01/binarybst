@@ -110,7 +110,23 @@ public class Solution {
     }
     TreeNode ans = null,cur=root;
     while(cur!=p){
+      if(p.val<cur.val){
+        ans=cur;
+        cur=cur.left;
+      }
+      if(p.val>cur.val){
+        cur=cur.right;
+      }
     }
+    
+    if(p.right!=null){
+      cur=p.right;
+      while(cur.left!=null){
+        cur=cur.left;
+      }
+      ans=cur;
+    }
+    return ans;
   }
 }
 ```
