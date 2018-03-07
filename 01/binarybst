@@ -57,3 +57,46 @@ public class Solution {
   }
 }
 ```
+
+lc314	
+Binary Tree Vertical Order Traversal    
+```
+public class Solution {
+  public List<List<Integer>> verticalOrder(TreeNode root){
+    List<List<Integer>> ans = new ArrayList<>();
+    if(root==null){
+      return ans;
+    }
+    int col_min=0;
+    int col_max=0;
+    HashMap<Integer, List<Integer>> col = new HashMap<>();
+    Queue<Integer> q1 = new LinkedList<>(); //record column
+    Queue<TreeNode> q2=new LinkedList<>(); //record node
+    q1.add(0);
+    q2.add(root);
+    while(!q1.isEmpty()){
+      int c = q1.poll();
+      TreeNode node=q2.poll();
+      if(!col.containsKey(c)){
+        col.put(c,new ArrayList<Integer>());
+      }
+      col.get(c).add(node.val);
+      col_min=Math.min(col_min,c);
+      col_max=Math.max(col_max,c);
+      
+      if(node.left!=null){
+        q1.add(c-1);
+        q2.add(node.left);
+      }
+      if(node.right!=null){
+        q1.add(c-1);
+        q2.add(node.right);
+      }
+      for(int 1=col_min;i<=col_max;i++){
+        ans.add(col.get(i));
+      }
+      return ans;
+    }
+  }
+}
+```
