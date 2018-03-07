@@ -100,3 +100,17 @@ public class Solution {
   }
 }
 ```
+lc285	
+Inorder Successor in BST
+```
+public class Solution {
+  public TreeNode inorderSuccessor(TreeNode root, TreeNode p){
+    if(root==null||p==null){
+      return null;
+    }
+    TreeNode ans = null,cur=root;
+    while(cur!=p){
+    }
+  }
+}
+```
