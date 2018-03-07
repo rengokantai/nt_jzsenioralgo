@@ -46,5 +46,14 @@ public class Solution {
     depth.get(d).add(cur.val);
     return d;
   }
+  public List<List<Integer>> findLeaves(TreeNode root){
+    List<List<Integer>> ans = new ArrayList<>();
+    max_depth=0;
+    dfs(root);
+    for(int i=1;i<=max.length;i++){
+      ans.add(depth.get(i));
+    }
+    return ans;
+  }
 }
 ```
