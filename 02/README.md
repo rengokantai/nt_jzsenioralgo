@@ -38,3 +38,26 @@ public class Solution{
   }
 }
 ```
+
+lc 254
+Factor combinations
+```
+public class Solution{
+  List<List<Integer>> ans= new ArrayList<>();
+  List<Integer> ans_item = new ArrayList<>();
+  void dfs(int lastF,int remain){
+    if(!ans_item.isEmpty()){
+      ans_item.add(remain);
+      ans.add(
+    }
+    
+    for(int
+  }
+  
+  
+  public List<List<Integer>> getFactors(int n){
+    dfs(2,n);
+    return ans;
+  }
+}
+```
